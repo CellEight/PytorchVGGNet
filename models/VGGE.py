@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class VGGD(nn.Module):
+class VGGE(nn.Module):
     """ The VGG-D CNN architecture as described in the 2014 paper 
         "Very Deep Convolutional Networks for Large-Scale Image Recognition"
         by Karen Simonyan, Andrew Zisserman. See Table 1 of the paper.""" 
