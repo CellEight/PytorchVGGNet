@@ -8,7 +8,7 @@ Pytorch implementations of each of the models (usally referred to as the VGG mod
 This repository contains code for each of the 6 different architectures described in the paper.
 The structure of these different models is described in the following table pulled from the paper.
 
-![The VGG Architecture Tables](./model.png)
+![The VGG Architecture Tables](./model.ppm)
 
 ## Dataset
 
