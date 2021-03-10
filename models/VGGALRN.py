@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class VGGA(nn.Module):
-    """ The VGG-A CNN architecture as described in the 2014 paper 
+class VGGALRN(nn.Module):
+    """ The VGG-A-LRN CNN architecture as described in the 2014 paper 
         "Very Deep Convolutional Networks for Large-Scale Image Recognition"
         by Karen Simonyan, Andrew Zisserman. See Table 1 of the paper.""" 
     def __init__(self, n_class):

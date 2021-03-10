@@ -8,6 +8,9 @@ from torchvision import transforms
 import numpy as np
 import pickle
 from models.VGGA import VGGA 
+from models.VGGALRN import VGGALRN 
+from models.VGGB import VGGB 
+from models.VGGC import VGGC 
 
 # Select device to train on
 device = torch.device("cuda")
@@ -48,9 +51,35 @@ if __name__ == "__main__":
     test_data, train_data = random_split(dataset,(4396,1099), generator=torch.Generator().manual_seed(42))
     train_dl = torch.utils.data.DataLoader(train_data, batch_size=32, shuffle=True, num_workers=4)
     test_dl = torch.utils.data.DataLoader(test_data, batch_size=32, shuffle=True, num_workers=4)
-    # Train Model
+    # Train Models
     epochs = 25
+    # VGGA 
     model = VGGA(11).to(device)
+    loss_func = nn.CrossEntropyLoss()
+    opt = optim.Adam(model.parameters(), lr=0.0001)
+    train_loss, test_loss = train(model, train_dl, test_dl, opt, loss_func, epochs)
+    # VGGA-LRN
+    model = VGGA-LRN(11).to(device)
+    loss_func = nn.CrossEntropyLoss()
+    opt = optim.Adam(model.parameters(), lr=0.0001)
+    train_loss, test_loss = train(model, train_dl, test_dl, opt, loss_func, epochs)
+    # VGGB
+    model = VGGB(11).to(device)
+    loss_func = nn.CrossEntropyLoss()
+    opt = optim.Adam(model.parameters(), lr=0.0001)
+    train_loss, test_loss = train(model, train_dl, test_dl, opt, loss_func, epochs)
+    # VGGC 
+    model = VGGC(11).to(device)
+    loss_func = nn.CrossEntropyLoss()
+    opt = optim.Adam(model.parameters(), lr=0.0001)
+    train_loss, test_loss = train(model, train_dl, test_dl, opt, loss_func, epochs)
+    # VGGD 
+    model = VGGD(11).to(device)
+    loss_func = nn.CrossEntropyLoss()
+    opt = optim.Adam(model.parameters(), lr=0.0001)
+    train_loss, test_loss = train(model, train_dl, test_dl, opt, loss_func, epochs)
+    # VGGE 
+    model = VGGE(11).to(device)
     loss_func = nn.CrossEntropyLoss()
     opt = optim.Adam(model.parameters(), lr=0.0001)
     train_loss, test_loss = train(model, train_dl, test_dl, opt, loss_func, epochs)
